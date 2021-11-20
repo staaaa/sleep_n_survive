@@ -1,2 +1,2 @@
 # sleep_n_survive
-Contains all files from my game project sleep'n survive
+This is my project of a 2D game called sleep'n survive

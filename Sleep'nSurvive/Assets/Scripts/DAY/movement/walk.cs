@@ -6,6 +6,8 @@ public class walk : MonoBehaviour
 {
     private float playerSpeed = 6.5f;
 
+    public Animator animator;
+
     void FixedUpdate()
     {
         float moveX = 0f;
@@ -14,11 +16,15 @@ public class walk : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                moveY = +1f;   
+                moveY = +1f;
+                animator.SetBool("up",true);
+                animator.SetBool("down",false);   
             }
             if (Input.GetKey(KeyCode.S))
             {
                 moveY = -1f;
+                animator.SetBool("down",true);   
+                animator.SetBool("up",false);   
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -28,6 +34,13 @@ public class walk : MonoBehaviour
             {
                 moveX = +1f;
             }
+            bool isIdle = moveX == 0 && moveY == 0;
+            if(isIdle == true)
+            {
+                animator.SetBool("up",false);
+                animator.SetBool("down",false);
+            }
+
             Vector3 moveDir = new Vector3(moveX, moveY).normalized;
 
             Vector3 targetMovePosition = transform.position + moveDir * playerSpeed * Time.deltaTime;

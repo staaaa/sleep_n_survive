@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameScenes/thanks.unity
     guid: 95a35afc107c2416ab8814effed95c08
+  - enabled: 1
+    path: Assets/Scenes/gameScenes/Forest 1.unity
+    guid: c849893c3792a429b9a94058c847a477
   m_configObjects: {}

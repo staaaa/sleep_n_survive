@@ -77,15 +77,12 @@ public class Dialogue_Manager : MonoBehaviour
 
     void EndDialogue()
     {
-        static_walk.can_walk = true;
         bar.anchoredPosition = new Vector2(-11f, -1000f);
 
         dialogueText.text = "";
         zdanie = "";
         zd = false;
-
-        fade_static.koniec = true;
-
+        static_walk.can_walk = true;
     }
 
     public void FullSentence()

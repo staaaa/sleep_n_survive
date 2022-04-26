@@ -18,12 +18,15 @@ public class Dialogue_Manager : MonoBehaviour
     public bool kon;
 
     public RectTransform bar;
+    AudioSource audioData;
+
 
 
     void Start()
     {
         kon = true;
         zd = false;
+        audioData = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -68,6 +71,8 @@ public class Dialogue_Manager : MonoBehaviour
             {
                 sent2 = sent.Substring(0, i);
                 dialogueText.text = sent2;
+                audioData.Play(0);
+
                 yield return new WaitForSeconds(delay);
             }
             else yield break; 
